@@ -5,11 +5,11 @@ from numpy import loadtxt
 ################################################################################
 #modify according to your needs
 analysis_name = "" #string
-input_ped = "" #path to files ped, map and pop, without file extenxtion
+input_ped = "" #path to files ped, map and pop, without file extention
                #(map and ped files must have the same name)
 remove_inds = "" #path to file.txt
 output_path = "" #path to folder
-input_bed = "" #path to files bed, fam and bin, without file extenxtion
+input_bed = "" #path to files bed, fam and bin, without file extention
 final_lines_order = "" #path to file.txt
 path_plink = "" #path to plink
 path_faststru = "" #path to fastStructure folder
