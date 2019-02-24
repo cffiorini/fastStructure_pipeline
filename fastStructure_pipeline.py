@@ -4,17 +4,17 @@ from numpy import loadtxt
 
 ################################################################################
 #modify according to your needs
-analysis_name = "test" #string
-input_ped = "/home/fiorini/test/test" #path to files ped, map and pop, without file extenxtion
+analysis_name = "" #string
+input_ped = "" #path to files ped, map and pop, without file extenxtion
                #(map and ped files must have the same name)
-remove_inds = "/home/fiorini/test/test_remove_ind.txt" #path to file.txt
-output_path = "/home/fiorini/test/" #path to folder
-input_bed = "/home/fiorini/test/test"
-final_lines_order = "/home/fiorini/test/test_reorder_lines.txt" #path to file.txt
-path_plink = "/home/fiorini/Ceci/Professional/Software/plink" #path to plink
-path_faststru = "/home/fiorini/bin/fastStructure/" #path to fastStructure folder
-rep = range(2) #number of repetitions
-k_range = range(1,3) #range of k = (k to k+1)
+remove_inds = "" #path to file.txt
+output_path = "" #path to folder
+input_bed = "" #path to files bed, fam and bin, without file extenxtion
+final_lines_order = "" #path to file.txt
+path_plink = "" #path to plink
+path_faststru = "" #path to fastStructure folder
+rep = range() #number of repetitions (r)
+k_range = range(,) #range of k = (kmin,kmax+1)
 ################################################################################
 
 os.chdir(output_path)
@@ -37,11 +37,6 @@ for r in rep:
             "--input=" + input_bed, #input=output 1
             "--output=" + output_path + "outr%d"%r #output folder
         ])
-        # s = ''
-        # for i in range(1, 209):
-        #     s = s + str(i) + '\n'
-        # subprocess.call(["echo", s, ">", output_path + "outr%d.%d.meanQ"%(r,k) #output
-        # ])
 
 #change line order so clumpak output will match desired order
 ordering = loadtxt(final_lines_order, comments="#", delimiter=",", unpack=False)
