@@ -89,6 +89,16 @@ for r in rep:
             rdir
         ])
 
+#perform fastStructure chooseK analysis
+with open(output_path + analysis_name + "_chooseK/chooseK.log", "w") as chooseK:
+    for r in rep:
+        rdir = output_path + analysis_name + "_chooseK/r%d"%r
+        subprocess.call(["python",
+                path_faststru + "chooseK.py",
+                "--input=" + rdir + "/outr%d"%r,
+
+        ], stdout=chooseK)
+
 #clean folder
 subprocess.call(["rm",
     "-r",
@@ -99,13 +109,3 @@ subprocess.call(["rm",
     "test.log",
     "test.nosex",
 ])
-
-#perform fastStructure chooseK analysis
-with open(output_path + analysis_name + "_chooseK/chooseK.log", "w") as chooseK:
-    for r in rep:
-        rdir = output_path + analysis_name + "_chooseK/r%d"%r
-        subprocess.call(["python",
-                path_faststru + "chooseK.py",
-                "--input=" + rdir + "/outr%d"%r,
-
-        ], stdout=chooseK)
